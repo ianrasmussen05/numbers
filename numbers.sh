@@ -1,12 +1,21 @@
 #! /bin/bash
-# zip.sh
-echo "Enter a five-digit ZIP code: "
-read ZIP
-while echo $ZIP | egrep -v "^[0-9]{5}$" > /dev/null 2>&1
+# numbers.sh
+# Ian Rasmussen
+
+echo -n "Enter a positive number: "; read number
+N=1
+
+while $N<=$number
 do
-	echo "You must enter a valid ZIP code - five digits only!"
-	echo "Enter a five-digit ZIP code: "
-	read ZIP
+	echo $N
+	if $((N%2)) -eq 0
+	then
+		echo "$N is an even number."
+	else
+		echo "$N is an odd number."
+	fi
+	N=$[$N+1]
+
 done
-echo "Thank you"
+echo "Good bye!"
 
