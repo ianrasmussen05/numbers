@@ -2,13 +2,13 @@
 # numbers.sh
 # Ian Rasmussen
 
-echo -n "Enter a positive number: "; read number
+echo "Enter a positive number: "
 N=1
+read NUMBER
 
-while $N<=$number
+while [ $N -le $NUMBER ]
 do
-	echo $N
-	if $((N%2)) -eq 0
+	if [ $((N%2)) -eq 0 ]
 	then
 		echo "$N is an even number."
 	else
